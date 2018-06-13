@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/newDAG/crypto"
+	"github.com/newdag/crypto"
 )
 
 func TestSignBlock(t *testing.T) {
@@ -47,14 +47,12 @@ func TestAppendSignature(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	fmt.Println(sig.ValidatorHex())
 	err = block.SetSignature(sig)
 	if err != nil {
 		t.Fatal(err)
 	}
-	spub := fmt.Sprintf("0x%X", pubKeyBytes)
-	fmt.Println(spub)
-	blockSignature, err := block.GetSignature(spub)
+
+	blockSignature, err := block.GetSignature(fmt.Sprintf("0x%X", pubKeyBytes))
 	if err != nil {
 		t.Fatal(err)
 	}

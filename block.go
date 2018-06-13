@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/newDAG/crypto"
+	"github.com/newdag/crypto"
 )
 
 type BlockBody struct {
